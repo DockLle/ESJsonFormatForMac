@@ -238,9 +238,9 @@
     NSString *superClassString = [[NSUserDefaults standardUserDefaults] valueForKey:@"SuperClass"];
     NSMutableString *result = nil;
     if (superClassString&&superClassString.length>0) {
-        result = [NSMutableString stringWithFormat:@"@interface %@ : %@\n",classInfo.className,superClassString];
+        result = [NSMutableString stringWithFormat:@"class %@ : %@\n",classInfo.className,superClassString];
     }else{
-        result = [NSMutableString stringWithFormat:@"@interface %@ : NSObject\n",classInfo.className];
+        result = [NSMutableString stringWithFormat:@"class %@ : NSObject\n",classInfo.className];
     }
     [result appendString:classInfo.propertyContent];
     [result appendString:@"\n}"];

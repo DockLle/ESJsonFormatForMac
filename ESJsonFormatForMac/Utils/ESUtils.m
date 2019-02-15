@@ -16,10 +16,11 @@
     NSAppleEventDescriptor *des =[_script executeAndReturnError:&_error];
     if (_error.count == 0) {
         NSString *desStr = des.stringValue;
-        NSRange range = [desStr rangeOfString:@"Xcode "];
+        NSRange preRange = [desStr rangeOfString:@"Xcode "];
+        NSRange subRange = [desStr rangeOfString:@"Build"];
         NSInteger version = 0;
-        if (range.location != NSNotFound && desStr.length>range.length) {
-            version = [[desStr substringWithRange:NSMakeRange(range.length, 1)] integerValue];
+        if (preRange.location != NSNotFound && subRange.location != NSNotFound && desStr.length>subRange.length + preRange.length) {
+            version = [[desStr substringWithRange:NSMakeRange(preRange.length, subRange.location - preRange.length)] integerValue];
         }
         return version;
     }
