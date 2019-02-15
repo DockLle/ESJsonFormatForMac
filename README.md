@@ -4,7 +4,13 @@
 附上[简书地址](http://www.jianshu.com/p/a5e26ae42d8b),在使用中有任何问题或者好的建议可以在简书或者GitHub issue
 
 
-![image](https://github.com/czhen09/ESJsonFormatForMac/raw/master/image/useGuide.gif)     
+![image](https://github.com/czhen09/ESJsonFormatForMac/raw/master/image/useGuide.gif) 
+
+## 2019-2-15
+*完善了对swift的支持
+*修复了Xcode10以后OC不支持泛型的bug
+
+### 原作者长时间没维护，本人试着修复部分存在的问题
 
 ## 2017-10-31   
 * 软件版本升级到1.1;  

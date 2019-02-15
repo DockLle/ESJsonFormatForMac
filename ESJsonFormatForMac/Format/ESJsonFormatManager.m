@@ -238,12 +238,12 @@
     NSString *superClassString = [[NSUserDefaults standardUserDefaults] valueForKey:@"SuperClass"];
     NSMutableString *result = nil;
     if (superClassString&&superClassString.length>0) {
-        result = [NSMutableString stringWithFormat:@"class %@ : %@\n",classInfo.className,superClassString];
+        result = [NSMutableString stringWithFormat:@"class %@ : %@{\n",classInfo.className,superClassString];
     }else{
-        result = [NSMutableString stringWithFormat:@"class %@ : NSObject\n",classInfo.className];
+        result = [NSMutableString stringWithFormat:@"class %@ : NSObject{\n",classInfo.className];
     }
     [result appendString:classInfo.propertyContent];
-    [result appendString:@"\n}"];
+    [result appendString:@"\n}\n"];
     if ([ESJsonFormatSetting defaultSetting].outputToFiles) {
         [result insertString:@"import UIKit\n\n" atIndex:0];
         //headerStr
